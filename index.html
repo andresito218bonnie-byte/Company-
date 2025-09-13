@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="es" data-color-scheme="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMPANY+ Premium - Entretenimiento Sin Límites</title>
+    <meta name="description" content="La plataforma de streaming premium con contenido ilimitado">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Premium Loader -->
+    <div id="premium-loader" class="premium-loader" role="status" aria-label="Cargando aplicación">
+        <div class="loader-container">
+            <div class="loader-rings">
+                <div class="ring ring-1"></div>
+                <div class="ring ring-2"></div>
+                <div class="ring ring-3"></div>
+            </div>
+            <div class="loader-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="loader-text">Cargando COMPANY+ Premium...</div>
+                <div class="loader-percentage">0%</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Particles Canvas -->
+    <canvas id="particles-canvas" class="particles-canvas hidden"></canvas>
+
+    <!-- Header -->
+    <header id="header" class="header" role="banner">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    <a href="#home" class="logo-link">
+                        <h1>COMPANY<span class="header__plus">+</span></h1>
+                    </a>
+                </div>
+                
+                <nav class="header__nav" role="navigation" aria-label="Navegación principal">
+                    <a href="#home" class="nav-link active" data-i18n="nav_home">Inicio</a>
+                    <a href="#soporte" class="nav-link" data-i18n="nav_support">Soporte</a>
+                    <a href="#faq" class="nav-link" data-i18n="nav_faq">FAQ</a>
+                </nav>
+
+                <div class="header__controls">
+                    <!-- Language Selector -->
+                    <div class="language-selector">
+                        <button class="language-toggle" id="language-toggle" aria-label="Cambiar idioma" aria-haspopup="listbox">
+                            <span class="current-lang">🇪🇸 ES</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="language-dropdown" id="language-dropdown" role="listbox" aria-labelledby="language-toggle">
+                            <button class="lang-option" data-lang="es" role="option" aria-selected="true">🇪🇸 Español</button>
+                            <button class="lang-option" data-lang="en" role="option" aria-selected="false">🇺🇸 English</button>
+                            <button class="lang-option" data-lang="pt" role="option" aria-selected="false">🇧🇷 Português</button>
+                            <button class="lang-option" data-lang="fr" role="option" aria-selected="false">🇫🇷 Français</button>
+                        </div>
+                    </div>
+
+                    <!-- Theme Toggle -->
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+                        <i class="fas fa-moon theme-icon"></i>
+                    </button>
+
+                    <!-- Auth Actions -->
+                    <div class="header__actions">
+                        <a href="#login" class="btn btn--secondary btn--sm" data-i18n="login_button">Iniciar Sesión</a>
+                        <a href="#register" class="btn btn--primary btn--sm" data-i18n="register_button">Registrarse</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menú móvil" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Navegación móvil">
+            <div class="mobile-menu__content">
+                <nav class="mobile-nav">
+                    <a href="#home" class="mobile-nav-link" data-i18n="nav_home">Inicio</a>
+                    <a href="#soporte" class="mobile-nav-link" data-i18n="nav_support">Soporte</a>
+                    <a href="#faq" class="mobile-nav-link" data-i18n="nav_faq">FAQ</a>
+                </nav>
+                <div class="mobile-actions">
+                    <a href="#login" class="btn btn--secondary btn--full-width" data-i18n="login_button">Iniciar Sesión</a>
+                    <a href="#register" class="btn btn--primary btn--full-width" data-i18n="register_button">Registrarse</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content" role="main">
+        
+        <!-- Home Page -->
+        <div id="home-page" class="page active">
+            <section class="hero" role="banner">
+                <div class="hero__background">
+                    <div class="hero__gradient"></div>
+                </div>
+                <div class="container">
+                    <div class="hero__content">
+                        <h1 class="hero__title">
+                            <span data-i18n="hero_title_1">Descubre el entretenimiento</span>
+                            <span class="hero__highlight" data-i18n="hero_title_2">definitivo</span>
+                        </h1>
+                        <p class="hero__description" data-i18n="hero_description">
+                            Miles de películas, series y documentales. Todo el contenido premium que amas en una sola plataforma de streaming de última generación.
+                        </p>
+                        <div class="hero__actions">
+                            <a href="#register" class="btn btn--primary btn--lg">
+                                <i class="fas fa-play-circle"></i>
+                                <span data-i18n="hero_cta_primary">Comenzar Ahora</span>
+                            </a>
+                            <a href="#dashboard" class="btn btn--outline btn--lg">
+                                <i class="fas fa-eye"></i>
+                                <span data-i18n="hero_cta_secondary">Ver Demo</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="features" role="region" aria-labelledby="features-title">
+                <div class="container">
+                    <h2 id="features-title" class="features__title" data-i18n="features_title">¿Por qué elegir COMPANY+?</h2>
+                    <div class="features__grid">
+                        <div class="feature-card">
+                            <div class="feature-card__icon">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                            <h3 data-i18n="feature_1_title">Contenido Ilimitado</h3>
+                            <p data-i18n="feature_1_desc">Accede a miles de películas y series de los mejores estudios del mundo en calidad 4K.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-card__icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3 data-i18n="feature_2_title">Perfiles Familiares</h3>
+                            <p data-i18n="feature_2_desc">Crea hasta 6 perfiles diferentes con control parental y recomendaciones personalizadas.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-card__icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h3 data-i18n="feature_3_title">Multiplataforma</h3>
+                            <p data-i18n="feature_3_desc">Disfruta en cualquier dispositivo con sincronización perfecta y descarga offline.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-card__icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3 data-i18n="feature_4_title">Ultra Seguro</h3>
+                            <p data-i18n="feature_4_desc">Protección avanzada de datos y control parental con tecnología de última generación.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cta-section">
+                <div class="container">
+                    <div class="cta-content">
+                        <h2 data-i18n="cta_title">¿Listo para comenzar?</h2>
+                        <p data-i18n="cta_description">Únete a millones de usuarios que ya disfrutan de COMPANY+ Premium</p>
+                        <a href="#register" class="btn btn--primary btn--lg" data-i18n="cta_button">Prueba Gratuita de 30 Días</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Login Page -->
+        <div id="login-page" class="page auth-page">
+            <div class="auth-container">
+                <div class="auth-card glass-effect">
+                    <div class="auth-card__header">
+                        <h2 data-i18n="login_title">¡Bienvenido de vuelta!</h2>
+                        <p data-i18n="login_subtitle">Accede a tu cuenta COMPANY+ Premium</p>
+                    </div>
+                    <form class="auth-form" id="login-form" novalidate>
+                        <div class="form-group">
+                            <label class="form-label" for="login-email" data-i18n="form_email">Email</label>
+                            <div class="input-group">
+                                <i class="fas fa-envelope input-icon"></i>
+                                <input type="email" id="login-email" class="form-control" data-i18n-placeholder="form_email_placeholder" placeholder="tu@email.com" required autocomplete="email">
+                                <div class="input-validation">
+                                    <i class="fas fa-check validation-icon success"></i>
+                                    <i class="fas fa-times validation-icon error"></i>
+                                </div>
+                            </div>
+                            <div class="form-error" role="alert"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="login-password" data-i18n="form_password">Contraseña</label>
+                            <div class="input-group">
+                                <i class="fas fa-lock input-icon"></i>
+                                <input type="password" id="login-password" class="form-control" data-i18n-placeholder="form_password_placeholder" placeholder="••••••••" required autocomplete="current-password">
+                                <button type="button" class="password-toggle" aria-label="Mostrar contraseña">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <div class="input-validation">
+                                    <i class="fas fa-check validation-icon success"></i>
+                                    <i class="fas fa-times validation-icon error"></i>
+                                </div>
+                            </div>
+                            <div class="form-error" role="alert"></div>
+                        </div>
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="remember-me">
+                                <span class="checkmark"></span>
+                                <span data-i18n="form_remember">Recordarme</span>
+                            </label>
+                            <a href="#forgot-password" class="forgot-link" data-i18n="form_forgot">¿Olvidaste tu contraseña?</a>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--full-width" data-loading="Iniciando sesión...">
+                            <i class="fas fa-sign-in-alt"></i>
+                            <span data-i18n="login_button">Iniciar Sesión</span>
+                        </button>
+                    </form>
+                    <div class="auth-links">
+                        <p>
+                            <span data-i18n="login_no_account">¿No tienes cuenta?</span>
+                            <a href="#register" data-i18n="login_register_link">Regístrate gratis</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Register Page -->
+        <div id="register-page" class="page auth-page">
+            <div class="auth-container">
+                <div class="auth-card glass-effect">
+                    <div class="auth-card__header">
+                        <h2 data-i18n="register_title">¡Únete a COMPANY+!</h2>
+                        <p data-i18n="register_subtitle">Crea tu cuenta premium y comienza a disfrutar</p>
+                    </div>
+                    <form class="auth-form" id="register-form" novalidate>
+                        <div class="form-group">
+                            <label class="form-label" for="register-name" data-i18n="form_name">Nombre Completo</label>
+                            <div class="input-group">
+                                <i class="fas fa-user input-icon"></i>
+                                <input type="text" id="register-name" class="form-control" data-i18n-placeholder="form_name_placeholder" placeholder="Tu nombre completo" required autocomplete="name">
+                                <div class="input-validation">
+                                    <i class="fas fa-check validation-icon success"></i>
+                                    <i class="fas fa-times validation-icon error"></i>
+                                </div>
+                            </div>
+                            <div class="form-error" role="alert"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="register-email" data-i18n="form_email">Email</label>
+                            <div class="input-group">
+                                <i class="fas fa-envelope input-icon"></i>
+                                <input type="email" id="register-email" class="form-control" data-i18n-placeholder="form_email_placeholder" placeholder="tu@email.com" required autocomplete="email">
+                                <div class="input-validation">
+                                    <i class="fas fa-check validation-icon success"></i>
+                                    <i class="fas fa-times validation-icon error"></i>
+                                </div>
+                            </div>
+                            <div class="form-error" role="alert"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="register-password" data-i18n="form_password">Contraseña</label>
+                            <div class="input-group">
+                                <i class="fas fa-lock input-icon"></i>
+                                <input type="password" id="register-password" class="form-control" data-i18n-placeholder="form_password_placeholder" placeholder="••••••••" required autocomplete="new-password">
+                                <button type="button" class="password-toggle" aria-label="Mostrar contraseña">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <div class="input-validation">
+                                    <i class="fas fa-check validation-icon success"></i>
+                                    <i class="fas fa-times validation-icon error"></i>
+                                </div>
+                            </div>
+                            <div class="form-error" role="alert"></div>
+                            <div class="password-strength">
+                                <div class="strength-bar">
+                                    <div class="strength-fill"></div>
+                                </div>
+                                <div class="strength-text" data-i18n="password_weak">Débil</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="register-confirm-password" data-i18n="form_confirm_password">Confirmar Contraseña</label>
+                            <div class="input-group">
+                                <i class="fas fa-lock input-icon"></i>
+                                <input type="password" id="register-confirm-password" class="form-control" data-i18n-placeholder="form_confirm_password_placeholder" placeholder="••••••••" required autocomplete="new-password">
+                                <div class="input-validation">
+                                    <i class="fas fa-check validation-icon success"></i>
+                                    <i class="fas fa-times validation-icon error"></i>
+                                </div>
+                            </div>
+                            <div class="form-error" role="alert"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="accept-terms" required>
+                                <span class="checkmark"></span>
+                                <span>
+                                    <span data-i18n="form_accept_terms_1">Acepto los</span>
+                                    <a href="#terms" data-i18n="form_accept_terms_2">Términos y Condiciones</a>
+                                    <span data-i18n="form_accept_terms_3">y la</span>
+                                    <a href="#privacy" data-i18n="form_accept_terms_4">Política de Privacidad</a>
+                                </span>
+                            </label>
+                            <div class="form-error" role="alert"></div>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--full-width" data-loading="Creando cuenta...">
+                            <i class="fas fa-user-plus"></i>
+                            <span data-i18n="register_button">Crear Cuenta Premium</span>
+                        </button>
+                    </form>
+                    <div class="auth-links">
+                        <p>
+                            <span data-i18n="register_have_account">¿Ya tienes cuenta?</span>
+                            <a href="#login" data-i18n="register_login_link">Inicia sesión</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Forgot Password Page -->
+        <div id="forgot-password-page" class="page auth-page">
+            <div class="auth-container">
+                <div class="auth-card glass-effect">
+                    <div class="auth-card__header">
+                        <h2 data-i18n="forgot_title">Recuperar Contraseña</h2>
+                        <p data-i18n="forgot_subtitle">Te enviaremos un enlace seguro para restablecer tu contraseña</p>
+                    </div>
+                    <form class="auth-form" id="forgot-form" novalidate>
+                        <div class="form-group">
+                            <label class="form-label" for="forgot-email" data-i18n="form_email">Email</label>
+                            <div class="input-group">
+                                <i class="fas fa-envelope input-icon"></i>
+                                <input type="email" id="forgot-email" class="form-control" data-i18n-placeholder="form_email_placeholder" placeholder="tu@email.com" required autocomplete="email">
+                                <div class="input-validation">
+                                    <i class="fas fa-check validation-icon success"></i>
+                                    <i class="fas fa-times validation-icon error"></i>
+                                </div>
+                            </div>
+                            <div class="form-error" role="alert"></div>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--full-width" data-loading="Enviando enlace...">
+                            <i class="fas fa-paper-plane"></i>
+                            <span data-i18n="forgot_button">Enviar Enlace</span>
+                        </button>
+                    </form>
+                    <div class="auth-links">
+                        <p><a href="#login" data-i18n="forgot_back_login">← Volver al inicio de sesión</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profiles Page -->
+        <div id="profiles-page" class="page">
+            <div class="profiles-container">
+                <h1 class="profiles__title" data-i18n="profiles_title">¿Quién está viendo?</h1>
+                <p class="profiles__subtitle" data-i18n="profiles_subtitle">Selecciona tu perfil para continuar</p>
+                <div class="profiles__grid" id="profiles-grid">
+                    <div class="profile-card" data-profile="adult" tabindex="0" role="button" aria-label="Perfil Adulto">
+                        <div class="profile-card__avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3 data-i18n="profile_adult">Adulto</h3>
+                        <p data-i18n="profile_adult_desc">Todo el contenido disponible</p>
+                    </div>
+                    <div class="profile-card" data-profile="kids" tabindex="0" role="button" aria-label="Perfil Niños">
+                        <div class="profile-card__avatar kids">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <h3 data-i18n="profile_kids">Niños</h3>
+                        <p data-i18n="profile_kids_desc">Contenido familiar seguro</p>
+                    </div>
+                    <div class="profile-card" data-profile="teen" tabindex="0" role="button" aria-label="Perfil Adolescente">
+                        <div class="profile-card__avatar teen">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h3 data-i18n="profile_teen">Adolescente</h3>
+                        <p data-i18n="profile_teen_desc">Para usuarios de 13-17 años</p>
+                    </div>
+                    <div class="profile-card add-profile" tabindex="0" role="button" aria-label="Agregar nuevo perfil">
+                        <div class="profile-card__avatar">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <h3 data-i18n="profile_add">Agregar Perfil</h3>
+                        <p data-i18n="profile_add_desc">Hasta 6 perfiles</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard Page -->
+        <div id="dashboard-page" class="page">
+            <div class="dashboard-header">
+                <div class="container">
+                    <div class="dashboard-nav">
+                        <div class="dashboard-nav__left">
+                            <a href="#dashboard" class="dashboard-logo">
+                                <h2>COMPANY<span class="header__plus">+</span></h2>
+                            </a>
+                            <nav class="dashboard-menu" role="navigation">
+                                <a href="#dashboard" class="active" data-i18n="nav_home">Inicio</a>
+                                <a href="#dashboard-movies" data-i18n="nav_movies">Películas</a>
+                                <a href="#dashboard-series" data-i18n="nav_series">Series</a>
+                                <a href="#dashboard-kids" data-i18n="nav_kids">Niños</a>
+                            </nav>
+                        </div>
+                        <div class="dashboard-nav__right">
+                            <div class="search-box">
+                                <i class="fas fa-search"></i>
+                                <input type="text" data-i18n-placeholder="search_placeholder" placeholder="Buscar contenido..." id="dashboard-search">
+                                <button class="search-clear" aria-label="Limpiar búsqueda">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                            <div class="user-menu">
+                                <button class="user-avatar" aria-label="Menú de usuario" aria-haspopup="true">
+                                    <i class="fas fa-user-circle"></i>
+                                </button>
+                                <div class="user-dropdown">
+                                    <a href="#profiles" data-i18n="menu_change_profile">Cambiar Perfil</a>
+                                    <a href="#settings" data-i18n="menu_settings">Configuración</a>
+                                    <a href="#help" data-i18n="menu_help">Ayuda</a>
+                                    <hr>
+                                    <a href="#logout" data-i18n="menu_logout">Cerrar Sesión</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-content">
+                <section class="hero-banner">
+                    <div class="hero-banner__content">
+                        <div class="hero-banner__badge" data-i18n="badge_featured">Destacado</div>
+                        <h1 data-i18n="hero_banner_title">La Serie del Momento</h1>
+                        <p data-i18n="hero_banner_desc">Una historia épica que cautivará tus sentidos con efectos visuales revolucionarios y una narrativa sin precedentes.</p>
+                        <div class="hero-banner__meta">
+                            <span class="rating">★ 9.2</span>
+                            <span class="year">2024</span>
+                            <span class="duration">8 episodios</span>
+                            <span class="genre" data-i18n="genre_drama">Drama</span>
+                        </div>
+                        <div class="hero-banner__actions">
+                            <button class="btn btn--primary btn--lg">
+                                <i class="fas fa-play"></i>
+                                <span data-i18n="button_play">Reproducir</span>
+                            </button>
+                            <button class="btn btn--outline btn--lg">
+                                <i class="fas fa-plus"></i>
+                                <span data-i18n="button_add_list">Mi Lista</span>
+                            </button>
+                            <button class="btn btn--outline btn--lg">
+                                <i class="fas fa-info-circle"></i>
+                                <span data-i18n="button_more_info">Más Info</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-rows">
+                    <div class="container">
+                        <div class="content-row">
+                            <h3 class="content-row__title" data-i18n="section_trending">En Tendencia</h3>
+                            <div class="content-carousel" id="trending-carousel">
+                                <!-- Content items will be dynamically generated -->
+                            </div>
+                        </div>
+                        <div class="content-row">
+                            <h3 class="content-row__title" data-i18n="section_recommended">Recomendado para Ti</h3>
+                            <div class="content-carousel" id="recommended-carousel">
+                                <!-- Content items will be dynamically generated -->
+                            </div>
+                        </div>
+                        <div class="content-row">
+                            <h3 class="content-row__title" data-i18n="section_new_releases">Nuevos Lanzamientos</h3>
+                            <div class="content-carousel" id="new-carousel">
+                                <!-- Content items will be dynamically generated -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- FAQ Page -->
+        <div id="faq-page" class="page">
+            <div class="support-container">
+                <div class="container">
+                    <h1 data-i18n="faq_title">Preguntas Frecuentes</h1>
+                    <p class="page-subtitle" data-i18n="faq_subtitle">Encuentra respuestas a las preguntas más comunes sobre COMPANY+</p>
+                    <div class="faq-list" id="faq-list">
+                        <!-- FAQ items will be dynamically generated based on current language -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings Page -->
+        <div id="settings-page" class="page">
+            <div class="settings-container">
+                <div class="container">
+                    <h1 data-i18n="settings_title">Configuración</h1>
+                    <div class="settings-grid">
+                        <div class="settings-section">
+                            <h3 data-i18n="settings_account">Cuenta</h3>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <strong data-i18n="settings_email">Email</strong>
+                                    <span>usuario@company.com</span>
+                                </div>
+                                <button class="btn btn--outline btn--sm" data-i18n="button_change">Cambiar</button>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <strong data-i18n="settings_password">Contraseña</strong>
+                                    <span data-i18n="settings_password_desc">Última actualización: hace 3 meses</span>
+                                </div>
+                                <button class="btn btn--outline btn--sm" data-i18n="button_change">Cambiar</button>
+                            </div>
+                        </div>
+                        <div class="settings-section">
+                            <h3 data-i18n="settings_preferences">Preferencias</h3>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <strong data-i18n="settings_theme">Tema</strong>
+                                    <span data-i18n="settings_theme_desc">Apariencia de la aplicación</span>
+                                </div>
+                                <select class="form-control" id="theme-select">
+                                    <option value="auto" data-i18n="theme_auto">Automático</option>
+                                    <option value="light" data-i18n="theme_light">Claro</option>
+                                    <option value="dark" data-i18n="theme_dark">Oscuro</option>
+                                </select>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <strong data-i18n="settings_language">Idioma</strong>
+                                    <span data-i18n="settings_language_desc">Idioma de la interfaz</span>
+                                </div>
+                                <select class="form-control" id="language-select">
+                                    <option value="es">🇪🇸 Español</option>
+                                    <option value="en">🇺🇸 English</option>
+                                    <option value="pt">🇧🇷 Português</option>
+                                    <option value="fr">🇫🇷 Français</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Support Pages -->
+        <div id="soporte-page" class="page">
+            <div class="support-container">
+                <div class="container">
+                    <h1 data-i18n="support_title">Centro de Soporte</h1>
+                    <p class="page-subtitle" data-i18n="support_subtitle">Estamos aquí para ayudarte. Encuentra la asistencia que necesitas.</p>
+                    <div class="support-grid">
+                        <div class="support-card">
+                            <div class="support-card__icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h3 data-i18n="support_tech_title">Soporte Técnico</h3>
+                            <p data-i18n="support_tech_desc">Obtén ayuda con problemas técnicos y de conectividad</p>
+                            <a href="#soporte-tecnico" class="btn btn--outline" data-i18n="button_learn_more">Saber Más</a>
+                        </div>
+                        <div class="support-card">
+                            <div class="support-card__icon">
+                                <i class="fas fa-question-circle"></i>
+                            </div>
+                            <h3 data-i18n="support_faq_title">Preguntas Frecuentes</h3>
+                            <p data-i18n="support_faq_desc">Encuentra respuestas rápidas a las dudas más comunes</p>
+                            <a href="#faq" class="btn btn--outline" data-i18n="button_view_faq">Ver FAQ</a>
+                        </div>
+                        <div class="support-card">
+                            <div class="support-card__icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3 data-i18n="support_security_title">Seguridad</h3>
+                            <p data-i18n="support_security_desc">Consejos para mantener tu cuenta segura</p>
+                            <a href="#security" class="btn btn--outline" data-i18n="button_security_tips">Consejos de Seguridad</a>
+                        </div>
+                        <div class="support-card">
+                            <div class="support-card__icon">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <h3 data-i18n="support_billing_title">Facturación</h3>
+                            <p data-i18n="support_billing_desc">Gestiona tu suscripción y métodos de pago</p>
+                            <a href="#billing" class="btn btn--outline" data-i18n="button_manage_billing">Gestionar Facturación</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Pages -->
+        <div id="terms-page" class="page">
+            <div class="legal-container">
+                <div class="container">
+                    <h1 data-i18n="terms_title">Términos y Condiciones</h1>
+                    <div class="legal-content">
+                        <div class="legal-section">
+                            <h3 data-i18n="terms_acceptance">1. Aceptación de Términos</h3>
+                            <p data-i18n="terms_acceptance_text">Al usar COMPANY+, aceptas estos términos y condiciones en su totalidad.</p>
+                        </div>
+                        <div class="legal-section">
+                            <h3 data-i18n="terms_service">2. Uso del Servicio</h3>
+                            <p data-i18n="terms_service_text">El servicio está destinado para uso personal y no comercial.</p>
+                        </div>
+                        <div class="legal-section">
+                            <h3 data-i18n="terms_subscription">3. Suscripción y Pagos</h3>
+                            <p data-i18n="terms_subscription_text">Las suscripciones se renuevan automáticamente hasta que sean canceladas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Notification Container -->
+    <div id="notification-container" class="notification-container" role="region" aria-label="Notificaciones" aria-live="polite"></div>
+
+    <!-- Offline Indicator -->
+    <div id="offline-indicator" class="offline-indicator hidden">
+        <i class="fas fa-wifi"></i>
+        <span data-i18n="offline_message">Sin conexión a internet</span>
+    </div>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
