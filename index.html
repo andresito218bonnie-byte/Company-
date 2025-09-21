@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMPANY+ - Plataforma Premium de Streaming</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="https://blogger.googleusercontent.com/img/a/AVvXsEgG_r9eavHXECtFIjeBJFcF_DZL87UJ9wLz8m26NvhwW9UIFFpH3wkr_IK0eNZYW-N42fT0S0TSOea_gBgRXX3_UUCns8J3LrqoQELulLxBRkVyLtonVddTYaP6cxJeVzOJSsbDXxoaehjVJTYNX2ckCRn8m_4Sj4QV5JsW-zDRdU1CEpNAoYqNb04fxUK1" alt="COMPANY+" class="logo-img">
+                <span class="logo-text">COMPANY+</span>
+            </div>
+            <nav class="nav">
+                <a href="#home" class="nav-link" data-route="home">
+                    <i class="fas fa-home"></i>
+                    <span>Inicio</span>
+                </a>
+                <a href="#explorar" class="nav-link" data-route="explorar">
+                    <i class="fas fa-compass"></i>
+                    <span>Explorar</span>
+                </a>
+                <a href="#ayuda" class="nav-link" data-route="ayuda">
+                    <i class="fas fa-question-circle"></i>
+                    <span>Ayuda</span>
+                </a>
+                <a href="#login" class="nav-link" data-route="login" id="auth-link">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Iniciar Sesión</span>
+                </a>
+                <div id="user-menu" class="user-menu hidden">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <span id="user-name"></span>
+                    <button id="logout-btn" class="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+        <!-- Landing Page (Default) - EXACTAMENTE COMO TE GUSTA -->
+        <section id="home-view" class="view active">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <div class="hero-container">
+                    <div class="hero-content">
+                        <h1 class="hero-title">
+                            Series exclusivas, películas épicas y mucho más
+                        </h1>
+                        <p class="hero-subtitle">
+                            La experiencia cinematográfica que estabas esperando
+                        </p>
+                        <p class="hero-description">
+                            Contenido premium en calidad 4K
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#register" class="btn btn-primary" data-route="register">
+                                🚀 Comenzar Aventura
+                            </a>
+                            <a href="#login" class="btn btn-secondary" data-route="login">
+                                Ya tengo cuenta
+                            </a>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="stat">
+                                <span class="stat-value">10M+</span>
+                                <span class="stat-label">USUARIOS</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">50K+</span>
+                                <span class="stat-label">CONTENIDO</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">4K</span>
+                                <span class="stat-label">ULTRA HD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Premium Experience Section -->
+            <section class="premium-section">
+                <div class="premium-container">
+                    <div class="section-header">
+                        <h2 class="section-title">Experiencia Premium</h2>
+                        <p class="section-subtitle">Descubre por qué somos la plataforma de streaming líder</p>
+                    </div>
+                    
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-header">
+                                <div class="feature-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="feature-badge">EXCLUSIVO</div>
+                            </div>
+                            <div class="feature-content">
+                                <h3 class="feature-title">Contenido Exclusivo</h3>
+                                <p class="feature-description">
+                                    Series y películas originales que no encontrarás en ningún otro lugar. 
+                                    Producciones premium con los mejores actores.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-header">
+                                <div class="feature-icon">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <div class="feature-badge ultra-hd">ULTRA HD</div>
+                            </div>
+                            <div class="feature-content">
+                                <h3 class="feature-title">Calidad 4K</h3>
+                                <p class="feature-description">
+                                    Disfruta de la máxima calidad de imagen y sonido envolvente. 
+                                    Tecnología HDR para una experiencia cinematográfica.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-header">
+                                <div class="feature-icon">
+                                    <i class="fas fa-infinity"></i>
+                                </div>
+                                <div class="feature-badge unlimited">ILIMITADO</div>
+                            </div>
+                            <div class="feature-content">
+                                <h3 class="feature-title">Sin Límites</h3>
+                                <p class="feature-description">
+                                    Ve todo lo que quieras, cuando quieras, en cualquier dispositivo. 
+                                    Descargas offline disponibles.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <div class="cta-container">
+                    <h2 class="cta-title">¿Listo para la aventura?</h2>
+                    <p class="cta-subtitle">Únete a millones de usuarios que ya disfrutan de COMPANY+</p>
+                    <a href="#register" class="btn btn-primary btn-large" data-route="register">
+                        🚀 Comenzar Ahora
+                    </a>
+                    <div class="cta-features">
+                        <span>Sin compromiso</span>
+                        <span>•</span>
+                        <span>Cancela cuando quieras</span>
+                        <span>•</span>
+                        <span>Prueba gratis 7 días</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="footer-container">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <img src="https://blogger.googleusercontent.com/img/a/AVvXsEgG_r9eavHXECtFIjeBJFcF_DZL87UJ9wLz8m26NvhwW9UIFFpH3wkr_IK0eNZYW-N42fT0S0TSOea_gBgRXX3_UUCns8J3LrqoQELulLxBRkVyLtonVddTYaP6cxJeVzOJSsbDXxoaehjVJTYNX2ckCRn8m_4Sj4QV5JsW-zDRdU1CEpNAoYqNb04fxUK1" alt="COMPANY+" class="footer-logo-img">
+                            <span class="footer-logo-text">COMPANY+</span>
+                        </div>
+                        <p class="footer-description">La plataforma de streaming que eliges por calidad</p>
+                    </div>
+                    
+                    <div class="footer-links">
+                        <div class="footer-column">
+                            <h4>Plataforma</h4>
+                            <ul>
+                                <li><a href="#explorar" data-route="explorar">Explorar</a></li>
+                                <li><a href="#">Novedades</a></li>
+                                <li><a href="#">Populares</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Soporte</h4>
+                            <ul>
+                                <li><a href="#ayuda" data-route="ayuda">Centro de Ayuda</a></li>
+                                <li><a href="#">Contacto</a></li>
+                                <li><a href="#">FAQ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 COMPANY+. Todos los derechos reservados.</p>
+                </div>
+            </footer>
+        </section>
+
+        <!-- Explorar View (Pública) -->
+        <section id="explorar-view" class="view">
+            <div class="page-container">
+                <div class="page-header">
+                    <h1>Explorar Contenido</h1>
+                    <p>Descubre nuestra amplia biblioteca de series, películas y documentales</p>
+                </div>
+                
+                <div class="content-sections">
+                    <div class="content-category">
+                        <h3><i class="fas fa-fire"></i> Tendencias</h3>
+                        <div class="content-grid">
+                            <div class="content-card">
+                                <div class="content-placeholder">
+                                    <i class="fas fa-play-circle"></i>
+                                </div>
+                                <h4>Serie Exclusiva 1</h4>
+                                <p>Drama • 2024 • 4K</p>
+                            </div>
+                            <div class="content-card">
+                                <div class="content-placeholder">
+                                    <i class="fas fa-play-circle"></i>
+                                </div>
+                                <h4>Película Épica</h4>
+                                <p>Acción • 2024 • HDR</p>
+                            </div>
+                            <div class="content-card">
+                                <div class="content-placeholder">
+                                    <i class="fas fa-play-circle"></i>
+                                </div>
+                                <h4>Documental</h4>
+                                <p>Naturaleza • 2024 • 4K</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="content-category">
+                        <h3><i class="fas fa-star"></i> Recomendado</h3>
+                        <div class="content-grid">
+                            <div class="content-card">
+                                <div class="content-placeholder">
+                                    <i class="fas fa-play-circle"></i>
+                                </div>
+                                <h4>Serie Original</h4>
+                                <p>Ciencia Ficción • 2024</p>
+                            </div>
+                            <div class="content-card">
+                                <div class="content-placeholder">
+                                    <i class="fas fa-play-circle"></i>
+                                </div>
+                                <h4>Thriller Premium</h4>
+                                <p>Suspenso • 2024</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="explore-cta">
+                    <div class="cta-card">
+                        <h3>¿Quieres acceso completo?</h3>
+                        <p>Regístrate para disfrutar todo nuestro contenido premium</p>
+                        <a href="#register" class="btn btn-primary" data-route="register">
+                            Comenzar Gratis
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ayuda View (Pública) -->
+        <section id="ayuda-view" class="view">
+            <div class="page-container">
+                <div class="page-header">
+                    <h1>Centro de Ayuda</h1>
+                    <p>Encuentra respuestas a las preguntas más frecuentes</p>
+                </div>
+                
+                <div class="help-sections">
+                    <div class="help-category">
+                        <h3><i class="fas fa-user-circle"></i> Cuenta y Suscripción</h3>
+                        <div class="faq-item">
+                            <h4>¿Cómo creo mi cuenta?</h4>
+                            <p>Haz clic en "Comenzar Aventura" y sigue los pasos para registrarte con tu email.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>¿Cuánto cuesta la suscripción?</h4>
+                            <p>Ofrecemos planes flexibles desde $9.99/mes con prueba gratuita de 7 días.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>¿Puedo cancelar cuando quiera?</h4>
+                            <p>Sí, puedes cancelar tu suscripción en cualquier momento sin penalizaciones.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="help-category">
+                        <h3><i class="fas fa-play"></i> Reproducción y Calidad</h3>
+                        <div class="faq-item">
+                            <h4>¿En qué dispositivos puedo ver contenido?</h4>
+                            <p>Disponible en Smart TV, móviles, tablets, computadoras y consolas de juego.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>¿Todo el contenido está en 4K?</h4>
+                            <p>La mayoría de nuestro contenido premium está disponible en calidad 4K y HDR.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="help-category">
+                        <h3><i class="fas fa-download"></i> Descargas</h3>
+                        <div class="faq-item">
+                            <h4>¿Puedo descargar contenido offline?</h4>
+                            <p>Sí, con tu suscripción premium puedes descargar contenido para ver sin conexión.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-section">
+                    <div class="contact-card">
+                        <h3>¿No encontraste lo que buscabas?</h3>
+                        <p>Contacta a nuestro equipo de soporte 24/7</p>
+                        <div class="contact-options">
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-envelope"></i>
+                                Email
+                            </button>
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-comments"></i>
+                                Chat
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Login View -->
+        <section id="login-view" class="view">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <div class="auth-header">
+                        <h2>¡Bienvenido de vuelta!</h2>
+                        <p>Inicia sesión para continuar tu experiencia premium</p>
+                    </div>
+                    <form id="login-form" class="auth-form">
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <input type="email" id="login-email" name="email" class="form-input" required>
+                                <label for="login-email" class="form-label">Correo Electrónico</label>
+                                <i class="fas fa-envelope input-icon"></i>
+                            </div>
+                            <div class="field-error" id="login-email-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <input type="password" id="login-password" name="password" class="form-input" required>
+                                <label for="login-password" class="form-label">Contraseña</label>
+                                <i class="fas fa-lock input-icon"></i>
+                                <button type="button" class="password-toggle" data-target="login-password">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="field-error" id="login-password-error"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span class="btn-text">Iniciar Sesión</span>
+                            <i class="fas fa-spinner fa-spin btn-loading hidden"></i>
+                        </button>
+                    </form>
+                    <div class="auth-links">
+                        <a href="#forgot-password" class="link-secondary" data-route="forgot-password">
+                            ¿Olvidaste tu contraseña?
+                        </a>
+                        <div class="divider">
+                            <span>o</span>
+                        </div>
+                        <p class="link-text">
+                            ¿No tienes cuenta? 
+                            <a href="#register" class="link-primary" data-route="register">Regístrate</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Register View -->
+        <section id="register-view" class="view">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <div class="auth-header">
+                        <h2>¡Únete a COMPANY+!</h2>
+                        <p>Crea tu cuenta y accede a contenido exclusivo</p>
+                    </div>
+                    <form id="register-form" class="auth-form">
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <input type="text" id="register-fullname" name="fullname" class="form-input" required>
+                                <label for="register-fullname" class="form-label">Nombre Completo</label>
+                                <i class="fas fa-user input-icon"></i>
+                            </div>
+                            <div class="field-error" id="register-fullname-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <input type="email" id="register-email" name="email" class="form-input" required>
+                                <label for="register-email" class="form-label">Correo Electrónico</label>
+                                <i class="fas fa-envelope input-icon"></i>
+                            </div>
+                            <div class="field-error" id="register-email-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <input type="password" id="register-password" name="password" class="form-input" required>
+                                <label for="register-password" class="form-label">Contraseña</label>
+                                <i class="fas fa-lock input-icon"></i>
+                                <button type="button" class="password-toggle" data-target="register-password">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="field-error" id="register-password-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <input type="password" id="register-confirm-password" name="confirm_password" class="form-input" required>
+                                <label for="register-confirm-password" class="form-label">Confirmar Contraseña</label>
+                                <i class="fas fa-lock input-icon"></i>
+                                <button type="button" class="password-toggle" data-target="register-confirm-password">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="field-error" id="register-confirm-password-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="terms-checkbox" name="terms" required>
+                                <label for="terms-checkbox" class="checkbox-label">
+                                    <span class="checkbox-custom"></span>
+                                    Acepto los <a href="#" class="link-primary">Términos y Condiciones</a>
+                                </label>
+                            </div>
+                            <div class="field-error" id="register-terms-error"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span class="btn-text">Crear Cuenta</span>
+                            <i class="fas fa-spinner fa-spin btn-loading hidden"></i>
+                        </button>
+                    </form>
+                    <div class="auth-links">
+                        <p class="link-text">
+                            ¿Ya tienes cuenta? 
+                            <a href="#login" class="link-primary" data-route="login">Inicia sesión</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Forgot Password View -->
+        <section id="forgot-password-view" class="view">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <div class="auth-header">
+                        <h2>Recuperar Contraseña</h2>
+                        <p>Te enviaremos un enlace para restablecer tu contraseña</p>
+                    </div>
+                    <form id="forgot-password-form" class="auth-form">
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <input type="email" id="forgot-email" name="email" class="form-input" required>
+                                <label for="forgot-email" class="form-label">Correo Electrónico</label>
+                                <i class="fas fa-envelope input-icon"></i>
+                            </div>
+                            <div class="field-error" id="forgot-email-error"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span class="btn-text">Enviar Enlace</span>
+                            <i class="fas fa-spinner fa-spin btn-loading hidden"></i>
+                        </button>
+                    </form>
+                    <div id="forgot-success" class="success-message hidden">
+                        <i class="fas fa-check-circle"></i>
+                        <p>¡Enlace enviado! Revisa tu correo electrónico.</p>
+                    </div>
+                    <div class="auth-links">
+                        <a href="#login" class="link-primary" data-route="login">
+                            <i class="fas fa-arrow-left"></i>
+                            Volver al inicio de sesión
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profiles View (Protegida) -->
+        <section id="profiles-view" class="view">
+            <div class="profiles-container">
+                <div class="profiles-header">
+                    <h1>¿Quién está viendo?</h1>
+                    <p>Selecciona un perfil para continuar</p>
+                </div>
+                
+                <div class="profiles-grid">
+                    <div class="profile-card" data-profile="main">
+                        <div class="profile-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>Usuario Principal</h3>
+                        <p>Mi perfil</p>
+                    </div>
+                    
+                    <div class="profile-card add-profile">
+                        <div class="profile-avatar add">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <h3>Agregar Perfil</h3>
+                        <p>Nuevo usuario</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard View (Protegida) -->
+        <section id="dashboard-view" class="view">
+            <div class="dashboard-container">
+                <div class="dashboard-welcome">
+                    <h2>¡Bienvenido de vuelta!</h2>
+                    <p>Tu experiencia premium de COMPANY+ te está esperando</p>
+                    <div class="dashboard-stats">
+                        <div class="stat-card">
+                            <i class="fas fa-play-circle"></i>
+                            <h3>Premium Activo</h3>
+                            <p>Acceso completo</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-clock"></i>
+                            <h3>24/7</h3>
+                            <p>Streaming disponible</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-devices"></i>
+                            <h3>Multi-Device</h3>
+                            <p>Todos tus dispositivos</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dashboard-content">
+                    <div class="content-row">
+                        <h3>Continúa Viendo</h3>
+                        <div class="content-scroll">
+                            <div class="content-item">
+                                <div class="content-thumb">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <h4>Serie Exclusiva</h4>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 65%"></div>
+                                </div>
+                            </div>
+                            <div class="content-item">
+                                <div class="content-thumb">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <h4>Película Premium</h4>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 23%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-actions">
+                        <a href="#explorar" class="btn btn-primary" data-route="explorar">
+                            <i class="fas fa-compass"></i>
+                            Explorar Contenido
+                        </a>
+                        <a href="#ayuda" class="btn btn-secondary" data-route="ayuda">
+                            <i class="fas fa-question-circle"></i>
+                            Centro de Ayuda
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
